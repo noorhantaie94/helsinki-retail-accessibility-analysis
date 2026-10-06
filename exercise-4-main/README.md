@@ -1,57 +1,40 @@
-# Exercise 4: Data classification and aggregation
+# Exercise 4: Spatial Accessibility & Dominance Areas Analysis
 
+This repository contains the completed solutions for **Exercise 4** of the *Automating GIS Processes* course. The exercise focuses on analyzing travel time matrix datasets, determining spatial accessibility, and mapping shopping centre dominance areas in the Helsinki Metropolitan Area using Python and GeoPandas.
 
-This week we will practice how to **join different data sets**, 
-**classify vector data**, and **find the closest shopping centre** to
-all places in the Helsinki region.
+---
 
+##Project Overview
 
-- **Exercise 4 is due by Thursday, 28 November 2024, end of day**
+The main objective of this exercise is to work with multi-source spatial data and travel time matrices to perform accessibility modeling:
 
-- Don’t forget to check out the [hints for this week’s
-exercise](https://autogis-site.readthedocs.io/en/latest/lessons/lesson-4/exercise-4.html#hints)
+* **Problem 1: Shopping Centre Accessibility**
+  * Integrated YKR grid data with travel time datasets for specific shopping centres (*Itis* and *Myyrmanni*).
+  * Classified public transport travel times using custom bin ranges and visualized accessibility patterns across the metropolitan region.
+  * Generated output plot: `data/shopping_centre_accessibility.png`.
 
-- Scores on this exercise are out of **20 points**.
+* **Problem 2: Shopping Centre Dominance Areas**
+  * Loaded and processed travel time matrices for all 7 major shopping centres (*Dixi, Forum, Iso Omena, Itis, Jumbo, Myyrmanni, Ruoholahti*).
+  * Handled missing data (`-1` values representing unreachable cells) by converting them to `NaN`.
+  * Computed the minimum travel time (`min_t`) to any shopping centre for every grid cell.
+  * Identified the closest/dominant shopping centre (`dominant_service`) per grid cell using `idxmin()`.
+  * Visualized the results using a $2 \times 1$ subplot map comparing dominance areas and minimum travel times.
+  * Generated output plot: `data/dominance_areas.png`.
 
+---
 
-## Notes
+##  Repository Structure
 
-#### Solution code cells
-
-You can always start working by removing this line of comment: 
-
-```
-# ADD YOUR CODE HERE
-```
-
-We are checking your solutions semi-automatically. Please use the suggested
-variable names when writing your code. 
-
-#### Non-editable code cells
-
-Some of the code-cells are ‘non-editable’ which means that you are supposed to
-run them, but you are not able to edit them. These non-editable code cells
-should help you test your code while you proceed. 
-
-#### *No* immediate feedback
-
-This week’s exercise is more complex, and there often exists more than one way
-to solve a problem. For this reason, exercise 4 is *not graded automatically*.
-Use the cells marked `# NON-EDITABLE CODE CELL FOR TESTING YOUR SOLUTION` to
-check whether your code works.
-
-
-## Start working
-
- - [Problem 1 (10 points)](Exercise-4-problem-1.ipynb)
- - [Problem 2 (10 points)](Exercise-4-problem-2.ipynb)
-
-## Exercise 4 grade and feedback: ? / 20.0 points
-### Grader
-- ?
-### Problem scores
-- Problem 1: ? / 10.0
-- Problem 2: ? / 10.0
-
-### Comments
-- ?
+```text
+exercise-4-main/
+│
+├── data/
+│   ├── YKR_grid_EPSG3067.gpkg          # YKR Grid Shapefile/GeoPackage
+│   ├── travel_times_to_*.txt           # Travel time matrices for shopping centres
+│   ├── shopping_centre_accessibility.png # Output map for Problem 1
+│   └── dominance_areas.png              # Output map for Problem 2
+│
+├── Exercise-4-problem-1.ipynb          # Jupyter Notebook for Problem 1
+├── Exercise-4-problem-2.ipynb          # Jupyter Notebook for Problem 2
+├── .gitignore                          # Git ignore configuration
+└── README.md                           # Project documentation
