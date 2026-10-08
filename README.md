@@ -1,4 +1,4 @@
-# Exercise 4: Spatial Accessibility & Dominance Areas Analysis
+#  Spatial Accessibility & Dominance Areas Analysis
 
 This repository contains the completed solutions for **Exercise 4** of the *Automating GIS Processes* course. The exercise focuses on analyzing travel time matrix datasets, determining spatial accessibility, and mapping shopping centre dominance areas in the Helsinki Metropolitan Area using Python and GeoPandas.
 
@@ -8,12 +8,12 @@ This repository contains the completed solutions for **Exercise 4** of the *Auto
 
 The main objective of this exercise is to work with multi-source spatial data and travel time matrices to perform accessibility modeling:
 
-* **Problem 1: Shopping Centre Accessibility**
+* * 1: Shopping Centre Accessibility**
   * Integrated YKR grid data with travel time datasets for specific shopping centres (*Itis* and *Myyrmanni*).
   * Classified public transport travel times using custom bin ranges and visualized accessibility patterns across the metropolitan region.
   * Generated output plot: `data/shopping_centre_accessibility.png`.
 
-* **Problem 2: Shopping Centre Dominance Areas**
+* *2: Shopping Centre Dominance Areas**
   * Loaded and processed travel time matrices for all 7 major shopping centres (*Dixi, Forum, Iso Omena, Itis, Jumbo, Myyrmanni, Ruoholahti*).
   * Handled missing data (`-1` values representing unreachable cells) by converting them to `NaN`.
   * Computed the minimum travel time (`min_t`) to any shopping centre for every grid cell.
